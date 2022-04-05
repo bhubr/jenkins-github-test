@@ -25,5 +25,10 @@ pipeline {
                 }
             }
         }
+        stage('package') {
+            steps {
+                sh 'docker ps'
+            }
+        }
     }
 }
