@@ -2,7 +2,12 @@ import express from "express";
 import cors from "cors";
 
 const app = express();
-app.use(cors());
+const allowedOrigin = process.env.ALLOWED_ORIGIN || "http://localhost:3000";
+app.use(
+  cors({
+    origin: allowedOrigin,
+  })
+);
 app.use(express.json());
 
 interface IPost {
