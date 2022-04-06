@@ -44,7 +44,7 @@ app.get("/api/posts/:id", (req, res) => {
       error: "Post id is not a number",
     });
   }
-  const post = posts.find((post) => post.id === postId);
+  const post = posts.find((p) => p.id === postId);
   if (!post) {
     return res.status(404).send({
       error: "Post not found",
