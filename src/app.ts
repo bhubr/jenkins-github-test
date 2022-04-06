@@ -1,8 +1,10 @@
 import express from "express";
 import cors from "cors";
+import helmet from "helmet";
 
 const app = express();
 const allowedOrigin = process.env.ALLOWED_ORIGIN || "http://localhost:3000";
+app.use(helmet());
 app.use(
   cors({
     origin: allowedOrigin,
